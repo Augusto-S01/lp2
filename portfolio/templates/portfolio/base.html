@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfólio{% endblock %}</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="barra_de_navegacao">
+            <img class="logo" src="{% static 'image/placeholder.png' %}" alt="Logo"/>
+            <ul>
+                <li><a href="{% url 'portfolio_detail' portfolio.id %}">{{ portfolio.title }}</a></li>
+                <li><a href="{% url 'portfolio_contato' portfolio.id %}">Contato</a></li>
+                <li><a href="{% url 'portfolio_faq' portfolio.id %}">FAQ</a></li>
+                <li><a href="{% url 'portfolio_agenda' portfolio.id %}">Agenda</a></li>
+                <li><a href="{% url 'portfolio_feedback' portfolio.id %}">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>&copy; {% now "Y" %} {% block footer_name %}Nome do Profissional{% endblock %}. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

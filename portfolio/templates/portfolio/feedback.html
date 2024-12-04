@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block title %}Feedback de Clientes - {{ portfolio.title }}{% endblock %}
+
+{% block content %}
+<section class="feedback-section">
+    <div class="container">
+        <h1>Feedback de Clientes</h1>
+        <div class="feedback-list">
+            {% for feedback in feedbacks %}
+                <div class="feedback-item">
+                    <div class="feedback-header">
+                        <h2 class="feedback-name">{{ feedback.name }}</h2>
+                        <div class="feedback-rating">
+                            <span class="rating-value">{{ feedback.rating }}</span>/10
+                        </div>
+                    </div>
+                    <p class="feedback-comment">{{ feedback.comment }}</p>
+                    <p class="feedback-date">{{ feedback.date|date:"d/m/Y" }}</p>
+                </div>
+            {% empty %}
+                <p>Não há feedbacks disponíveis no momento.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

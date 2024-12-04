@@ -1,0 +1,33 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block title %}Contato - {{ portfolio.title }}{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="container">
+        <h1>Entre em Contato</h1>
+        <p>Você pode me encontrar nas seguintes redes sociais e canais de contato:</p>
+        <div class="social-links">
+            <a href="{{ portfolio.instagram_url }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                <img src="{% static 'image/placeholder.svg' %}" alt="Instagram" class="social-icon">
+                <span>Instagram</span>
+            </a>
+            <a href="{{ portfolio.tiktok_url }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                <img src="{% static 'image/placeholder.svg' %}" alt="TikTok" class="social-icon">
+                <span>TikTok</span>
+            </a>
+            <a href="https://wa.me/{{ portfolio.whatsapp_number }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                <img src="{% static 'image/placeholder.svg' %}" alt="WhatsApp" class="social-icon">
+                <span>WhatsApp</span>
+            </a>
+        </div>
+        <div class="contact-info">
+            <h2>Informações de Contato</h2>
+            <p><strong>Telefone:</strong> {{ portfolio.phone_number }}</p>
+            <p><strong>Email:</strong> {{ portfolio.email }}</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

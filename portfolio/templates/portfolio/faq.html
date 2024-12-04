@@ -1,0 +1,24 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block title %}FAQ - {{ portfolio.title }}{% endblock %}
+
+{% block content %}
+<section class="faq-section">
+    <div class="container">
+        <h1>Perguntas Frequentes</h1>
+        <div class="faq-list">
+            {% for faq in faqs %}
+                <div class="faq-item">
+                    <h2 class="faq-question">{{ faq.question }}</h2>
+                    <p class="faq-answer">{{ faq.answer }}</p>
+                </div>
+            {% empty %}
+                <p>Não há perguntas frequentes disponíveis no momento.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+

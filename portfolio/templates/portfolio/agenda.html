@@ -1,0 +1,17 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block title %}Agenda - {{ portfolio.title }}{% endblock %}
+
+{% block content %}
+<section class="agenda-section">
+    <div class="container">
+        <h1>Agenda</h1>
+        <div class="agenda-message">
+            <p>Não há agendamento disponível no momento.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
