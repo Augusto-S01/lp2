@@ -1,14 +1,23 @@
 from pathlib import Path
 import os
 
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://portifolio.augustosouza.tech',
+    'http://portifolio.augustosouza.tech',
+]
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^%rbk2ast8l-&0qzkl74w97-#cw(&6g7vzaq8n=1rrfxjl8_oj'
 DEBUG = True
 ALLOWED_HOSTS = [
-    'portifolio.augustosouza.tech',  # Domínio do seu site
-    'www.portifolio.augustosouza.tech',  # Se tiver www
-    'localhost',  # Para desenvolvimento local
-    '127.0.0.1',  # Para desenvolvimento local
+    'portifolio.augustosouza.tech',
+    'www.portifolio.augustosouza.tech',
+    'localhost',
+    '127.0.0.1',
     'augustosouza.tech',
     'augustosouza.tech:8001'
 ]
