@@ -4,7 +4,14 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^%rbk2ast8l-&0qzkl74w97-#cw(&6g7vzaq8n=1rrfxjl8_oj'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'portifolio.augustosouza.tech',  # Domínio do seu site
+    'www.portifolio.augustosouza.tech',  # Se tiver www
+    'localhost',  # Para desenvolvimento local
+    '127.0.0.1',  # Para desenvolvimento local
+    'augustosouza.tech',
+    'augustosouza.tech:8001'
+]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
