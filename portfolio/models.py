@@ -9,6 +9,8 @@ class Portfolio(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     is_tenant = models.BooleanField(default=False)
 
+    professional_name = models.CharField(max_length=100, blank=True)  # Novo campo para o nome do profissional
+
     instagram_url = models.URLField(blank=True)
     tiktok_url = models.URLField(blank=True)
     whatsapp_number = models.CharField(max_length=20, blank=True)

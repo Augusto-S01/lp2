@@ -3,20 +3,23 @@
 {% load static %}
 
 {% block content %}
-
-{% for secao_context in secoes %}
-    {% with secao=secao_context.secao %}
-        {% if secao_context.tipo == "SecaoDescritiva" %}
-            {% include "portfolio/secoes/secao_descritiva.html" with secao=secao %}
-        {% elif secao_context.tipo == "SecaoCarrosel" %}
-            {% include "portfolio/secoes/secao_carrosel.html" with secao=secao %}
-        {% elif secao_context.tipo == "SecaoVideo" %}
-            {% include "portfolio/secoes/secao_video.html" with secao=secao %}
-        {% endif %}
-    {% endwith %}
-{% endfor %}
-
-
+    {% for secao_context in secoes %}
+        {% with secao=secao_context.secao %}
+            {% if secao_context.tipo == "SecaoDescritiva" %}
+                {% include "portfolio/secoes/secao_descritiva.html" with secao=secao %}
+            {% elif secao_context.tipo == "SecaoCarrosel" %}
+                {% include "portfolio/secoes/secao_carrosel.html" with secao=secao %}
+            {% elif secao_context.tipo == "SecaoVideo" %}
+                {% include "portfolio/secoes/secao_video.html" with secao=secao %}
+            {% endif %}
+        {% endwith %}
+    {% endfor %}
 {% endblock %}
 
-{% block footer_name %}Jeferson Reis{% endblock %}
+{% block footer_name %}
+    {% if portfolio.professional_name %}
+        {{ portfolio.professional_name }}
+    {% else %}
+        Nome do Profissional
+    {% endif %}
+{% endblock %}

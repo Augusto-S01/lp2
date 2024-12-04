@@ -24,9 +24,12 @@
 
     {% block content %}{% endblock %}
 
-    <footer>
-        <p>&copy; {% now "Y" %} {% block footer_name %}Nome do Profissional{% endblock %}. Todos os direitos reservados.</p>
-    </footer>
+<footer>
+    <p>&copy; {% now "Y" %} {% block footer_name %}{{ portfolio.professional_name }}{% endblock %}. Todos os direitos reservados.</p>
+</footer>
+
+
+
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{% static 'js/main.js' %}"></script>
